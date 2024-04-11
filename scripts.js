@@ -1,3 +1,4 @@
+const body = document.querySelector('body')
 const galeria=[
 {src:'https://okdiario.com/img/2023/08/26/no-mires-arriba-la-razon-de-los-atardeceres-tenidos-de-rojos-no-esta-en-el-cielo.jpg'},
 {src:'https://i.pinimg.com/564x/ed/63/2a/ed632aceea976a4ed370c9d691494e68.jpg'},
@@ -12,4 +13,12 @@ for(i=0;i<30;i++){
   const imagen = document.createElement('img')
   imagen.src = imagenSeleccionada.src
   container.appendChild(imagen)
+}
+const click =document.querySelectorAll('img')
+const array=[...click]
+array.forEach(img => img.addEventListener('click', gaea))
+
+function gaea(){
+  const color = Math.floor(Math.random()*1000000)
+  body.style.backgroundColor= `#${color}`
 }

@@ -33,24 +33,33 @@ h1{
   animation-range: 0 200px;
 }
 .container{
+
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0px 40px 0 40px;
+
 }
 .containerImg{
+  padding: 0px 40px 0 40px;
   columns: 4;
   gap: 50px;
 }
 img{
-    margin-bottom: 20px;
-    width: 100%;
-    border-radius: 20px;
-    animation: dx linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 30%;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 20px;
+
+  transition: all .2s ease;
+  &:hover{
+    transition-duration: .5s;
+    scale: 1.1;
+  }
+  animation: dx linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
 
   }
+
   @keyframes dx{
     from{
       opacity: 0;
