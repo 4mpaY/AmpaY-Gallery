@@ -9,14 +9,15 @@ body{
     width: 8px;
   }
   &::-webkit-scrollbar-thumb{
-    background-color: white;
-    border-radius: 5px;
+    background-color: rgb(34, 34, 34);
+
   }
   &::-webkit-scrollbar-track{
-    background-color: transparent;
+    background-color: rgb(255, 255, 255, 0.5);
   }
-  scrollbar-gutter: stable;
+
 }
+
 html{
   font-family: "Tilt Neon", sans-serif;
   font-optical-sizing: auto;
@@ -61,7 +62,7 @@ img{
   transition: all .2s ease;
   &:hover{
     transition-duration: .5s;
-    scale: 1.1;
+    scale: 1.04;
   }
   animation: dx linear both;
   animation-timeline: view();

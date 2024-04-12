@@ -14,7 +14,7 @@ const galeria=[
 ]
 const container = document.querySelector('.containerImg')
 
-for(i=0;i<50;i++){
+for(i=0;i<100;i++){
   const random = Math.floor(Math.random()*galeria.length)
   const imagenSeleccionada= galeria[random]
   const imagen = document.createElement('img')
