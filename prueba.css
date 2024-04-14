@@ -70,6 +70,10 @@ img{
   animation-range: entry 10% cover 20%;
 
   }
+.divDefecto{
+  opacity: 0;
+  position: fixed;
+}
 .divActiva{
   display: flex;
   position: fixed;
@@ -81,14 +85,23 @@ img{
   justify-content: center;
   align-items: center;
   background-color: rgb(34, 34, 34, 0.8);
-  transition: all linear .2s;
+  opacity: 1;
+  transition: opacity linear .5s;
+}
+
+.divEnd{
+  opacity: 1;
+  transition: opacity linear 5s;
+  position: fixed;
+  background-color: rgb(34, 34, 34, 0.8);
 }
 .imagenActiva{
 
- width: fit-content;
- max-width: 80%;
- height: fit-content;
- max-height: 80%;
+  width: fit-content;
+  max-width: 80%;
+  height: fit-content;
+  max-height: 80%;
+
 }
   @keyframes dx{
     from{
