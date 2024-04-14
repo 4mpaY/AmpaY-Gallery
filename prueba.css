@@ -39,7 +39,7 @@ h1{
   z-index: 1;
   animation: titulo linear both;
   animation-timeline: scroll(root block);
-  animation-range: 0 200px;
+  animation-range: 0 100px;
   background-color: rgb(34, 34, 34);
   box-shadow: 0px 4px 10px rgb(34, 34, 34, 0.5);
 }
@@ -55,7 +55,7 @@ h1{
   columns: 6;
   gap: 18px;
 }
-img{
+.imagen{
   margin-bottom: 18px;
   width: 100%;
   border-radius: 20px;
@@ -85,32 +85,75 @@ img{
   justify-content: center;
   align-items: center;
   background-color: rgb(34, 34, 34, 0.8);
-  opacity: 1;
-  transition: opacity linear .5s;
+  animation: divActivado .2s linear both;
+  flex-direction: column;
 }
 
 .divEnd{
-  opacity: 1;
-  transition: opacity linear 5s;
+  display: flex;
   position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 4;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(34, 34, 34, 0.8);
+  animation: divEnd .2s linear both;
+  flex-direction: column;
 }
 .imagenActiva{
-
+  border-radius: 20px;
   width: fit-content;
   max-width: 80%;
   height: fit-content;
   max-height: 80%;
-
 }
-  @keyframes dx{
-    from{
-      opacity: 0;
-    }
-    to{
-      opacity: 1;
-    }
+.actividad{
+  height: 70px;
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  align-items: center;
+}
+.reacciones{
+  max-width: 40px;
+  max-height: 50px;
+}
+.comentario{
+  display: flex;
+  border: 1px solid #888;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 85%;
+  border-radius: 15px;
+  height: 40px;
+}
+
+@keyframes divActivado{
+  from{
+    opacity: 0;
   }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes divEnd{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+@keyframes dx{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
   @keyframes titulo{
     to{
       background-color: rgb(240, 248, 255, 0.5);
@@ -126,12 +169,11 @@ img{
   .contenedorDeImagenes{
     columns: 5;
   }
-  img{
-    border-radius: 10px;
-    margin-bottom: 10px;
+  .imagen{
+    margin-bottom: 15px;
   }
   .contenedorDeImagenes{
-    gap: 10px;
+    gap: 15px;
 
   }
   @media(max-width: 800px){
@@ -140,8 +182,15 @@ img{
       line-height: 40px;
       font-size: 20px;
     }
+    .imagen{
+      margin-bottom: 5px;
+      border-radius: 10px;
+    }
     .contenedorDeImagenes{
       columns: 4;
+      gap: 5px;
+      padding: 0px 10px;
+      margin-top: 10px;
     }
     @keyframes titulo{
       to{
@@ -153,14 +202,6 @@ img{
         line-height: 35px;
       }
     }
-    img{
-      border-radius: 10px;
-      margin-bottom: 5px;
-    }
-    .contenedorDeImagenes{
-      gap: 5px;
-      padding: 0px 10px;
-      margin-top: 10px;
-    }
+
   }
 }
