@@ -32,25 +32,58 @@ function ClickImagen(){
   divNuevo.addEventListener('click', ClickBorrar)
 
   const actividad = document.createElement('div')
-  const input = document.createElement('imput')
+  const input = document.createElement('input')
   const corazon = document.createElement('img')
 
+  input.type="text"
   input.classList.add('comentario')
-  corazon.src='/icons/corazon.png'
+  corazon.src='icons/corazon.png'
   actividad.classList.add('actividad')
   corazon.classList.add('reacciones')
 
-
   actividad.appendChild(input)
   actividad.appendChild(corazon)
-
   divNuevo.appendChild(imagenCopia)
   divNuevo.appendChild(actividad)
   container.appendChild(divNuevo)
   
-
   
+  const computedStyle =window.getComputedStyle(imagenCopia)
+  const renderedWith = parseInt(computedStyle.getPropertyValue("width"),10)
+  actividad.style.width = renderedWith-20 + "px"
+
+  imagenCopia.addEventListener('click', Imagen)
+  corazon.addEventListener('click', Reaccionar)
+  input.addEventListener('click', Comentar)
+  
+  function Comentar(event){
+    event.stopPropagation();
+
+  }
+
+  function Reaccionar (event){
+    event.stopPropagation();
+    const corazoncito = document.createElement('img')  
+    corazoncito.src=corazon.src
+    corazoncito.classList.add('reacciones')
+    corazoncito.classList.add('expandirse')
+    actividad.appendChild(corazoncito)
+    setTimeout(function(){corazoncito.remove()},5000)
+  }
+  let contador = 0
+  function Imagen(event){
+    contador++
+    event.stopPropagation();
+    if(contador%2==0){
+    const corazoncito = document.createElement('img')  
+    corazoncito.src=corazon.src
+    corazoncito.classList.add('reacciones')
+    corazoncito.classList.add('expandirse')
+    actividad.appendChild(corazoncito)
+    }
+  }
 }
+
 function ClickBorrar(){
   this.classList.remove('divActiva')
   this.classList.add('divEnd')
