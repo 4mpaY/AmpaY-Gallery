@@ -56,6 +56,15 @@ function ClickImagen(){
   corazon.addEventListener('click', Reaccionar)
   input.addEventListener('click', Comentar)
   
+  input.addEventListener('keydown', Enviar)
+
+  function Enviar(event){
+    if (event.keyCode ===13){
+      console.log("enviado")
+      input.value= '';
+    }
+  }
+
   function Comentar(event){
     event.stopPropagation();
 
